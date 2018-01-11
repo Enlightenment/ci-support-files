@@ -9,3 +9,7 @@ RUN dnf install --assumeyes wayland-protocols-devel libwayland-client libwayland
 
 # Install misc build dependencies
 RUN dnf install --assumeyes lz4-devel harfbuzz-devel libXpresent-devel libwebp-devel hyphen-devel lua-devel
+
+# Upgrade wayland-protocols-devel package to 1.12 from rawhide (can be changed back when it hits 27 as update)
+RUN dnf install fedora-repos-rawhide -y
+RUN dnf --disablerepo=* --enablerepo=rawhide --releasever=28 upgrade wayland-protocols-devel
