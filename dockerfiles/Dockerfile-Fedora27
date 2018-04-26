@@ -8,7 +8,7 @@ RUN dnf install --assumeyes bullet-devel libpng-devel libjpeg-turbo-devel gstrea
 RUN dnf install --assumeyes wayland-protocols-devel libwayland-client libwayland-server libinput-devel libdrm-devel libxkbcommon-devel uuid-devel wayland-devel mesa-libgbm-devel libxkbcommon-x11-devel
 
 # Install misc build dependencies
-RUN dnf install --assumeyes lz4-devel harfbuzz-devel libXpresent-devel libwebp-devel hyphen-devel lua-devel tslib-devel pixman-devel libvncserver-devel SDL2-devel openjpeg2-devel
+RUN dnf install --assumeyes lz4-devel harfbuzz-devel libXpresent-devel libwebp-devel hyphen-devel lua-devel tslib-devel pixman-devel libvncserver-devel SDL2-devel openjpeg2-devel avahi-devel alsa-lib-devel ibus-devel scim-devel gnutls-devel
 
 # Upgrade wayland-protocols-devel package to 1.12 from rawhide (can be changed back when it hits 27 as update)
 #RUN dnf install --assumeyes fedora-repos-rawhide
