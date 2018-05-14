@@ -10,6 +10,9 @@ RUN dnf install --assumeyes wayland-protocols-devel libwayland-client libwayland
 # Install misc build dependencies
 RUN dnf install --assumeyes lz4-devel harfbuzz-devel libXpresent-devel libwebp-devel hyphen-devel lua-devel tslib-devel pixman-devel libvncserver-devel SDL2-devel openjpeg2-devel avahi-devel alsa-lib-devel ibus-devel scim-devel gnutls-devel libgcrypt-devel gstreamer-devel gstreamer-plugins-base-devel
 
+# Install windows cross build dependencies
+RUN dnf install --assumeyes wget cmake mingw64-gcc
+
 # Upgrade wayland-protocols-devel package to 1.12 from rawhide (can be changed back when it hits 27 as update)
 #RUN dnf install --assumeyes fedora-repos-rawhide
 #RUN dnf --disablerepo=* --enablerepo=rawhide --releasever=28 upgrade --assumeyes wayland-protocols-devel
