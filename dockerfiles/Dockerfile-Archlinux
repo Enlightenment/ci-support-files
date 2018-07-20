@@ -9,4 +9,4 @@ RUN pacman -S --noconfirm git bullet libjpeg-turbo gst-plugins-base \
          libxkbcommon wayland lz4 openjpeg avahi \
          libspectre libraw librsvg wayland-protocols \
          git ninja clang gcc pkgconfig check autoconf make base-devel \
-         mesa poppler meson ttf-dejavu ccache
+         mesa poppler meson ttf-dejavu ccache 
