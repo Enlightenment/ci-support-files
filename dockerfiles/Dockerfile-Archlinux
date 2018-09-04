@@ -1,7 +1,7 @@
 FROM base/archlinux
 
 # Install
-RUN pacman -Syu
+RUN pacman -Syu --noconfirm
 RUN pacman -S --noconfirm git bullet libjpeg-turbo gst-plugins-base \
          luajit curl fribidi libpulse libxcomposite \
          libxinerama libxrandr libxss libinput \
