@@ -12,3 +12,5 @@ RUN dnf install --assumeyes lz4-devel harfbuzz-devel libXpresent-devel libwebp-d
 
 # Install windows cross build dependencies
 RUN dnf install --assumeyes cmake nasm patch gperf mingw32-gcc mingw32-gcc-c++ mingw64-gcc mingw64-gcc-c++
+
+RUN dbus-uuidgen --ensure=/etc/machine-id
