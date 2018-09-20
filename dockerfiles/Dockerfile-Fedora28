@@ -16,7 +16,7 @@ RUN dnf install --assumeyes cmake nasm patch gperf mingw32-gcc mingw32-gcc-c++ m
 # Build mingw cross-build dependencies for windows build
 RUN git clone https://github.com/vtorri/ewpi.git
 RUN cd ewpi; gcc -std=c99 -o ewpi ewpi.c ewpi_map.c
-RUN ./ewpi /root/EFL/ewpi_64 x86_64-w64-mingw32
+RUN cd ewpi; ./ewpi /root/EFL/ewpi_64 x86_64-w64-mingw32
 
 # Setup machine to be usable with dbus-daemon
 RUN systemd-machine-id-setup
