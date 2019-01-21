@@ -21,5 +21,8 @@ RUN dnf --assumeyes --releasever=29 update efl-devel
 #RUN cd ewpi; gcc -std=c99 -o ewpi ewpi.c ewpi_map.c
 #RUN cd ewpi; ./ewpi /root/EFL/ewpi_64 x86_64-w64-mingw32 1
 
+# Fetch data for exactness run during image creation and only update during builds
+RUN git clone https://git.enlightenment.org/tools/exactness-elm-data.git
+
 # Setup machine to be usable with dbus-daemon
 RUN systemd-machine-id-setup
