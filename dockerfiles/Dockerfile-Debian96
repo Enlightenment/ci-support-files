@@ -1,4 +1,4 @@
-FROM debian:9.1
+FROM debian:9.6
 
 # Install
 RUN apt-get update -y
