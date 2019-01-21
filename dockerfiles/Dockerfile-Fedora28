@@ -8,7 +8,7 @@ RUN dnf install --assumeyes bullet-devel libpng-devel libjpeg-turbo-devel gstrea
 RUN dnf install --assumeyes wayland-protocols-devel libwayland-client libwayland-server libinput-devel libdrm-devel libxkbcommon-devel uuid-devel wayland-devel mesa-libgbm-devel libxkbcommon-x11-devel mesa-libEGL-devel egl-wayland mesa-libwayland-egl mesa-libwayland-egl-devel
 
 # Install misc build dependencies
-RUN dnf install --assumeyes lz4-devel harfbuzz-devel libXpresent-devel libwebp-devel hyphen-devel lua-devel tslib-devel pixman-devel libvncserver-devel SDL2-devel openjpeg2-devel avahi-devel alsa-lib-devel ibus-devel scim-devel gnutls-devel libgcrypt-devel gstreamer-devel gstreamer-plugins-base-devel
+RUN dnf install --assumeyes lz4-devel harfbuzz-devel libXpresent-devel libwebp-devel hyphen-devel lua-devel tslib-devel pixman-devel libvncserver-devel SDL2-devel openjpeg2-devel avahi-devel alsa-lib-devel ibus-devel scim-devel gnutls-devel libgcrypt-devel gstreamer-devel gstreamer-plugins-base-devel lcov
 
 # Install windows cross build dependencies
 RUN dnf install --assumeyes cmake nasm patch gperf mingw32-gcc mingw32-gcc-c++ mingw64-gcc mingw64-gcc-c++ wget bzip2 efl-devel
