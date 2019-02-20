@@ -11,12 +11,12 @@ RUN dnf install --assumeyes wayland-protocols-devel libwayland-client libwayland
 RUN dnf install --assumeyes lz4-devel harfbuzz-devel libXpresent-devel libwebp-devel hyphen-devel lua-devel tslib-devel pixman-devel libvncserver-devel SDL2-devel openjpeg2-devel avahi-devel alsa-lib-devel ibus-devel scim-devel gnutls-devel libgcrypt-devel gstreamer-devel gstreamer-plugins-base-devel lcov
 
 # Install windows cross build dependencies
-RUN dnf install --assumeyes cmake nasm patch gperf mingw32-gcc mingw32-gcc-c++ mingw64-gcc mingw64-gcc-c++ wget bzip2 efl-devel
+RUN dnf install --assumeyes cmake nasm patch gperf mingw32-gcc mingw32-gcc-c++ mingw64-gcc mingw64-gcc-c++ wget bzip2 bison flex efl-devel
 
 # Build mingw cross-build dependencies for windows build
-#RUN git clone https://github.com/vtorri/ewpi.git
-#RUN cd ewpi; gcc -std=c99 -o ewpi ewpi.c ewpi_map.c
-#RUN cd ewpi; ./ewpi /root/EFL/ewpi_64 x86_64-w64-mingw32 1
+#RUN cd /; git clone https://github.com/vtorri/ewpi.git
+#RUN cd /ewpi; gcc -std=c99 -o ewpi ewpi.c ewpi_map.c
+#RUN cd /ewpi; ./ewpi --prefix=/ewpi-64-install --jobs=2 --clean
 
 # Fetch data for exactness run during image creation and only update during builds
 RUN git clone https://git.enlightenment.org/tools/exactness-elm-data.git
