@@ -19,7 +19,7 @@ RUN dnf install --assumeyes cmake nasm patch gperf mingw32-gcc mingw32-gcc-c++ m
 #RUN cd /ewpi; ./ewpi --prefix=/ewpi-64-install --jobs=2 --clean
 
 # Fetch data for exactness run during image creation and only update during builds
-RUN git clone https://git.enlightenment.org/tools/exactness-elm-data.git
+#RUN git clone https://git.enlightenment.org/tools/exactness-elm-data.git
 
 # Setup machine to be usable with dbus-daemon
 RUN systemd-machine-id-setup
