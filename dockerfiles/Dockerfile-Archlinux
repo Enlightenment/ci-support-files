@@ -9,6 +9,6 @@ RUN pacman -S --noconfirm git bullet libjpeg-turbo gst-plugins-base \
          libxkbcommon wayland lz4 openjpeg avahi \
          libspectre libraw librsvg wayland-protocols \
          git ninja clang gcc pkgconfig check autoconf make base-devel \
-         mesa poppler ttf-dejavu ccache python-pip
+         mesa poppler ttf-dejavu ccache python-pip 
 
 RUN pip3 install meson
