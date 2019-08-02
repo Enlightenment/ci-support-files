@@ -1,10 +1,8 @@
 FROM stefanschmidt1/ci-support-files:Fedora30
 
-# Install windows cross build dependencies. We need the newest ming64 and gcc thus using a copr repo
-# for rawhide
-RUN dnf install --assumeyes 'dnf-command(copr)' && dnf --assumeyes copr enable smani/mingw-gcc9
-RUN sed -i -e 's/$releasever/rawhide/g' /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:smani:mingw-gcc9.repo
-RUN dnf install --assumeyes cmake nasm patch gperf mingw32-gcc mingw32-gcc-c++ mingw64-gcc mingw64-gcc-c++ mingw64-pkg-config wget bzip2 bison flex yasm
+RUN dnf install --assumeyes cmake nasm patch gperf wget bzip2 bison flex yasm
+# Newer mingw-gcc (9.1), header files (6.0), etc needed from rawhide
+RUN dnf install fedora-repos-rawhide -y && dnf --disablerepo=* --enablerepo=rawhide --releasever=31 install -y mingw32-gcc mingw32-gcc-c++ mingw64-gcc mingw64-gcc-c++ mingw64-pkg-config
 
 # Build mingw cross-build dependencies for windows build
 RUN cd /; \
