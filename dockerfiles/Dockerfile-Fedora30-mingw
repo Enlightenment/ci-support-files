@@ -8,7 +8,9 @@ RUN dnf install fedora-repos-rawhide -y && dnf --disablerepo=* --enablerepo=rawh
 RUN cd /; \
 	git clone https://github.com/vtorri/ewpi.git; \
 	cd /ewpi; \
-	git checkout 5eaff6e068cd69aa3702dfbe4b7c54790386e286 -b known-working; \
-	sed -i -e 's/log 2>&1/make.log 2>&1 || true/g' packages/lz4/install.sh; \
+	git checkout 4a0af59344a7ede793f7beab2c2028f8ebf7b5c3 -b known-working; \
+	sed -i -e 's/libmysofa //g' packages/ffmpeg/ffmpeg.ewpi; \
+	echo "#! /bin/sh" > packages/ffmpeg/install.sh; \
+	echo "#! /bin/sh" > packages/efl/install.sh; \
 	gcc -std=c99 -o ewpi ewpi.c ewpi_map.c; \
-	./ewpi --prefix=/ewpi-64-install --jobs=2
+	./ewpi --prefix=/ewpi-64-install --jobs=2 --clean
