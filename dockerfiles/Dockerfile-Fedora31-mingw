@@ -1,0 +1,18 @@
+FROM stefanschmidt1/ci-support-files:Fedora31
+
+RUN dnf install --assumeyes cmake nasm patch gperf wget bzip2 bison flex yasm mingw32-gcc mingw32-gcc-c++ mingw64-gcc mingw64-gcc-c++ mingw64-pkg-config python3-pip python mingw64-libgomp which
+
+# Build mingw cross-build dependencies for windows build
+RUN cd /; \
+	git clone https://github.com/vtorri/ewpi.git; \
+	cd /ewpi; \
+	git checkout 1ba8e3f1679edb4479b66033d1184ac752a5ba54 -b known-working; \
+	sed -i -e 's/configure/autogen.sh/g' packages/cairo/install.sh; \
+	sed -i -e 's/export/#export/g' packages/fribidi/install.sh; \
+	echo "#! /bin/sh" > packages/libbs2b/install.sh; \
+	echo "#! /bin/sh" > packages/libmysofa/install.sh; \
+	echo "#! /bin/sh" > packages/ffmpeg/install.sh; \
+	echo "#! /bin/sh" > packages/gst-libav/install.sh; \
+	echo "#! /bin/sh" > packages/efl/install.sh; \
+	gcc -std=c99 -o ewpi ewpi.c ewpi_map.c; \
+	./ewpi --prefix=/ewpi-64-install --jobs=2 --clean
