@@ -1,3 +1,0 @@
-FROM stefanschmidt1/ci-support-files:Fedora31
-
-RUN dnf install --assumeyes mono-devel
