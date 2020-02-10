@@ -3,8 +3,5 @@ FROM fedora:31
 # Install EFL build dependencies, including wayland and many other build options
 RUN dnf update --assumeyes && dnf install --assumeyes bullet-devel libpng-devel libjpeg-turbo-devel gstreamer1-devel gstreamer1-plugins-base-devel zlib-devel luajit-devel libtiff-devel openssl-devel libcurl-devel dbus-devel dbus-x11 glibc-devel fontconfig-devel freetype-devel fribidi-devel pulseaudio-libs-devel libsndfile-devel libX11-devel libXau-devel libXcomposite-devel libXdamage-devel libXdmcp-devel libXext-devel libXfixes-devel libXinerama-devel libXrandr-devel libXrender-devel libXScrnSaver-devel libXtst-devel libXcursor-devel libXp-devel libXi-devel mesa-libGL-devel giflib-devel libmount-devel libblkid-devel systemd-devel poppler-cpp-devel poppler-devel LibRaw-devel libspectre-devel librsvg2-devel autoconf automake gcc gcc-c++ gettext-devel findutils tar xz libtool make meson ccache git wayland-protocols-devel libwayland-client libwayland-server libinput-devel libdrm-devel libxkbcommon-devel uuid-devel wayland-devel mesa-libgbm-devel libxkbcommon-x11-devel mesa-libEGL-devel egl-wayland mesa-libwayland-egl mesa-libwayland-egl-devel lz4-devel harfbuzz-devel libXpresent-devel libwebp-devel hyphen-devel lua-devel tslib-devel pixman-devel libvncserver-devel SDL2-devel openjpeg2-devel avahi-devel alsa-lib-devel ibus-devel scim-devel gnutls-devel libgcrypt-devel lcov wget libasan libuuid-devel mono-devel
 
-# Fetch data for exactness run during image creation and only update during builds
-#RUN git clone https://git.enlightenment.org/tools/exactness-elm-data.git
-
 # Setup machine to be usable with dbus-daemon
 RUN systemd-machine-id-setup
