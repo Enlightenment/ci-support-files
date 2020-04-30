@@ -1,0 +1,22 @@
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update -y && apt-get install -y build-essential doxygen check \
+    gettext git ninja-build python3-pip ccache binutils-gold dbus-x11 \
+    graphicsmagick-imagemagick-compat faenza-icon-theme \
+    libpam0g-dev libfreetype6-dev libpng-dev zlib1g-dev libjpeg-dev \
+    libdbus-1-dev libluajit-5.1-dev libx11-dev libxcursor-dev \
+    libxrender-dev libxrandr-dev libxfixes-dev libxdamage-dev libxcomposite-dev \
+    libxss-dev libxext-dev libxinerama-dev libxkbfile-dev libxtst-dev \
+    libxcb-keysyms1-dev libpulse-dev libsndfile1-dev libudev-dev \
+    libblkid-dev libmount-dev libgstreamer1.0-dev libtiff5-dev libgif-dev \
+    libssl-dev libspectre-dev libpoppler-dev librsvg2-dev libraw-dev libpoppler-private-dev \
+    libfribidi-dev libbullet-dev libgstreamer-plugins-base1.0-dev \
+    libvlc-dev libpoppler-cpp-dev libsystemd-dev systemd libsystemd0 \
+    libavahi-client-dev libibus-1.0-dev libharfbuzz-dev libwebp-dev libopenjp2-7-dev \
+    liblz4-dev libasound2-dev libbluetooth-dev libfontconfig1-dev libiconv-hook-dev \
+    libproxy-dev libscim-dev libudisks2-dev libunibreak-dev libxine2-dev \
+    libcurl4-openssl-dev mono-runtime mono-mcs
+RUN pip3 install meson
+#linux-tools-common libjpeg-turbo8-dev
