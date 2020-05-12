@@ -1,0 +1,3 @@
+FROM stefanschmidt1/ci-support-files:Fedora32
+
+RUN cd /; git clone --depth=1 --branch=devs/stefan/ci-integration https://git.enlightenment.org/tools/exactness-elm-data.git
