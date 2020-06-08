@@ -9,6 +9,7 @@ RUN cd /; \
 	git checkout 1ba8e3f1679edb4479b66033d1184ac752a5ba54 -b known-working; \
 	sed -i -e 's/configure/autogen.sh/g' packages/cairo/install.sh; \
 	sed -i -e 's/export/#export/g' packages/fribidi/install.sh; \
+	sed -i -e 's/1.0.2/1.1.0/g' packages/libwebp/libwebp.ewpi; \
 	echo "#! /bin/sh" > packages/libbs2b/install.sh; \
 	echo "#! /bin/sh" > packages/libmysofa/install.sh; \
 	echo "#! /bin/sh" > packages/ffmpeg/install.sh; \
